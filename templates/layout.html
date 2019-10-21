@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sophia's title</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="logo">Sophia's Website</h1>
+			<nav>
+				<ul class="menu">
+					<li><a href="{{ url_for('home') }}">Home</a></li>
+					<li><a href="{{ url_for('about') }}">About</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div>
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+	<br>
+	<br>
+	<footer>
+		This is a test footer
+	</footer>
+</html>
