@@ -18,7 +18,7 @@ def home():
 		print("results", results)
 		return redirect(url_for("home", results = results))
 	else:
-		print("This did not work, please make sure your text is at least one character long")
+		print("This did not work, please mnake sure your text is at least one character long")
 	return render_template("home.html", form = form, results = displayed_results)
 
 @app.route('/about/')
@@ -32,5 +32,16 @@ if __name__=="__main__":
 #py -m venv env
 #env\Scripts\activate
 #pip install flask
-#set FLASK_APP=app.py (or whatevet the file name is)
+#set FLASK_APP=app.py (or whatevER the file name is)
 #flask run
+
+#*if that doesn't work - do python app.py (or whatever the file name is)
+
+
+
+
+
+
+
+
+
