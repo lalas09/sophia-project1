@@ -1,7 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="about">
-	<h2> My about page</h2>
-	<p>This is a test website again</p>
+	<h2><font color=blue> Me and My Dictionary Project</font></h2>
+	<p>I built this website using Python, HTML, and CSS. This website is basically a dictionary; the user enters a word, and the definition of that word will be returned.</p>
+	<p>There are a few different component of this application:</p>
+	<p>1. app.py - when the user enters a word, this program reads the word and returns the corresponding definition. app.py also makes sure that a word is actually entered. For example, if the user does not type in anything at all, they will get a message saying, "This did not work, please make sure your text is at least one character long". app.py also has the code for the URL. So, if the user goes to www.sophipedia.com/about, app.py makes sure that webpage corresponds to the code I have written on the about page (about.html)</p>
+<p>2. interactive_english_dic.py - a dictionary that stores all the words and their corresponding definitions </p>
+<p>3. home.html - This code allows the user to enter a word, and it also codes the layout of the homepage </p>
+<p>4. about.html - This codes the layout of the about page</p>
+<p>5. layout.html - This is the code for the URL's (home, about, profile), and it also codes the copyright at the bottom of the page
+<p>6. main.css - This codes the layout of the pages: the color, sizes, and positions of the titles of each page</p>
 </div>
 {% endblock %}
