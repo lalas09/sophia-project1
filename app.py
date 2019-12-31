@@ -11,15 +11,23 @@ app.config.from_object(Config)
 def home():
 	form = TextForm()
 	displayed_results = request.args.getlist("results") or ""
+	message = ""
+	results = []
 	print("displayed_results", displayed_results)
 	if form.validate_on_submit():
 		print("form_data", form.text.data)
-		results = translate(form.text.data)
-		print("results", results)
-		return redirect(url_for("home", results = results))
+		form_results = translate(form.text.data)
+		if type(form_results) == "string":
+			message = form_results
+		else:
+			results = form_results
+		print("form_results", form_results)
+		return redirect(url_for("home", results = results, message = message))
 	else:
-		print("This did not work, please mnake sure your text is at least one character long")
-	return render_template("home.html", form = form, results = displayed_results)
+		print("This did not work")
+	#	return redirect(url_for("home"))
+	#	print("This did not work, please make sure your text is at least one character long")
+	return render_template("home.html", form = form, results = displayed_results, message = message)
 
 @app.route('/about/')
 def about():
@@ -36,6 +44,11 @@ if __name__=="__main__":
 #flask run
 
 #*if that doesn't work - do python app.py (or whatever the file name is)
+
+
+
+#ssh root@ (ip address)
+#enter password
 
 
 
