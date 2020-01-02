@@ -11,24 +11,25 @@ app.config.from_object(Config)
 def home():
 	form = TextForm()
 	displayed_results = request.args.getlist("results") or ""
+        displayed_message = request.args.getlist("message") or ""
 	message = ""
 	results = []
 	print("displayed_results", displayed_results)
 	if form.validate_on_submit():
 		print("form_data", form.text.data)
 		form_results = translate(form.text.data)
-		if type(form_results) == "string":
-			message = form_results
+                if type(form_results) is list:
+                    results = form_results
 		else:
-			results = form_results
+		    message = form_results
 		print("form_results", form_results)
 		return redirect(url_for("home", results = results, message = message))
 	else:
-		return render_template("home.html", form = form, results = displayed_results)
+		return render_template("home.html", form = form, results = displayed_results, message = displayed_message)
 		print("This did not work")
 	#	return redirect(url_for("home"))
 	#	print("This did not work, please make sure your text is at least one character long")
-	return render_template("home.html", form = form, results = displayed_results, message = message)
+	return render_template("home.html", form = form, results = displayed_results, message = displayed_message)
 
 @app.route('/about/')
 def about():
