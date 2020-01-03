@@ -1,0 +1,4 @@
+*.pyc
+/__pycache__
+app.py_bkup
+config.py

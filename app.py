@@ -40,7 +40,7 @@ def profile():
 	return render_template("profile.html")
 
 if __name__=="__main__":
-	app.run(host='0.0.0.0',debug=True)
+	app.run()
 
 #go to the right directory
 #py -m venv env
