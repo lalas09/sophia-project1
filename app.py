@@ -5,6 +5,8 @@ from interactive_english_dic import translate
 
 app = Flask(__name__)
 app.config.from_object(Config)
+SECRET_KEY = '8298u49289q4'
+app.config['SECRET_KEY'] = SECRET_KEY
 
 @app.route('/', methods=["GET", "POST"])
 #@app.route('/index')
@@ -55,12 +57,3 @@ if __name__=="__main__":
 
 #ssh root@ (ip address)
 #enter password
-
-
-
-
-
-
-
-
-
